@@ -16,5 +16,5 @@ variable "ami" {
   description = "Base AMI to launch the instances"
 
   # Bitnami NGINX AMI
-  default = "ami-00350e7e39bf5f6be"
+  default = "ami-0083cf20be2ad1b93"
 }
