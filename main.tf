@@ -13,11 +13,11 @@ provider "aws" {
 }
 
 # Create EC2 instance
-resource "aws_instance" "default" {
+resource "aws_instance" "fslab" {
   ami                    = var.ami
   count                  = var.instance_count
   key_name               = var.key_name
-  vpc_security_group_ids = [aws_security_group.default.id]
+  vpc_security_group_ids = [aws_security_group.fslab.id]
   source_dest_check      = false
   instance_type          = var.instance_type
 
@@ -27,8 +27,8 @@ resource "aws_instance" "default" {
 }
 
 # Create Security Group for EC2
-resource "aws_security_group" "default" {
-  name = "terraform-default-sg"
+resource "aws_security_group" "fslab" {
+  name = "terraform-fslab-sg"
 
   ingress {
     from_port   = 80
